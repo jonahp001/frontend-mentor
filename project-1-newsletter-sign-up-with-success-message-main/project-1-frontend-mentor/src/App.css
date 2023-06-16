@@ -1,0 +1,42 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('../../assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url('../../assets/fonts/Roboto-Bold.ttf');
+}
+
+.App-bg {
+  text-align: center;
+  background-color: #3e3a52;
+  min-height: 100vh;
+}
+
+.subscribe-window {
+  background-color: #f1edf6;
+  width: 800px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.subscribe {
+  padding: 3.5rem;
+  color: #312d45;
+  font-family: Roboto-Regular, sans-serif;
+  text-align: start;
+}
+
+.subscribe h1 {
+  font-size: 3rem;
+  font-family: Roboto-Bold, sans-serif;
+}
+
+.subscribe p {
+  font-size: 0.8rem;
+}
