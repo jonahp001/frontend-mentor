@@ -5,7 +5,7 @@ import Subscribe from './Elements/Subscribe';
 function App() {
   return (
     <div className="App-bg d-flex justify-content-center align-items-center">
-      <div className="subscribe-window container-md d-flex flex-row px-0">
+      <div className="subscribe-window container-md d-flex flex-row px-0 shadow">
         <Subscribe />
         <img
           className="h-100 p-4 col"

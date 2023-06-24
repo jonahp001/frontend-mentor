@@ -40,3 +40,69 @@
 .subscribe p {
   font-size: 0.8rem;
 }
+
+label {
+  font-family: Roboto-Bold, sans-serif;
+  font-size: 0.8rem;
+}
+
+#email {
+  width: 100%;
+  height: 3rem;
+  border-radius: 7px;
+  border: 2px solid rgb(189, 189, 189);
+  padding-left: 1rem;
+}
+
+#email:hover {
+  cursor: pointer;
+}
+
+#email:focus {
+  outline: none;
+}
+
+#email::placeholder {
+  font-family: Roboto-Regular, sans-serif;
+  color: rgb(162, 162, 162);
+  font-size: 0.9rem;
+}
+
+.incorrect-email {
+  width: 100%;
+  height: 3rem;
+  border-radius: 7px;
+  border: 2px solid rgb(189, 189, 189);
+  border-color: rgb(189, 189, 189);
+  padding-left: 1rem;
+}
+
+.correct-email {
+  width: 100%;
+  height: 3rem;
+  border-radius: 7px;
+  border: 2px solid rgb(216, 73, 68);
+  color: rgb(216, 73, 68);
+  border-color: rgb(216, 73, 68);
+  background-color: #f5d9d7;
+  padding-left: 1rem;
+}
+
+#submit {
+  width: 100%;
+  height: 3rem;
+  color: #f1edf6;
+  font-family: Roboto-Bold, sans-serif;
+  font-size: 0.8rem;
+  background-color: #3e3a52;
+  border-radius: 7px;
+  border: none;
+}
+
+#submit:hover {
+  cursor: pointer;
+}
+
+#submit:active {
+  background-color: #ff6a3b;
+}

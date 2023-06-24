@@ -1,3 +1,5 @@
+import Submit from './Submit';
+
 export default function Subscribe() {
   return (
     <div className="subscribe col">
@@ -5,7 +7,7 @@ export default function Subscribe() {
         <h1>Stay Updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
       </header>
-      <div>
+      <div id="checkmarks" className="mb-4">
         <div className="mb-1">
           <svg
             className="me-3"
@@ -15,11 +17,7 @@ export default function Subscribe() {
             viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
-              <path
-                stroke="#FFF"
-                stroke-width="2"
-                d="M6 11.381 8.735 14 15 8"
-              />
+              <path stroke="#FFF" strokeWidth="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
           <p className="d-inline">
@@ -35,11 +33,7 @@ export default function Subscribe() {
             viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
-              <path
-                stroke="#FFF"
-                stroke-width="2"
-                d="M6 11.381 8.735 14 15 8"
-              />
+              <path stroke="#FFF" strokeWidth="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
           <p className="d-inline">Measuring to ensure updates are a success</p>
@@ -53,16 +47,13 @@ export default function Subscribe() {
             viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
-              <path
-                stroke="#FFF"
-                stroke-width="2"
-                d="M6 11.381 8.735 14 15 8"
-              />
+              <path stroke="#FFF" strokeWidth="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
           <p className="d-inline">And much more!</p>
         </div>
       </div>
+      <Submit />
     </div>
   );
 }
