@@ -1,0 +1,152 @@
+    1  git branch --list
+    2  git branch project-1-newsletter-signup
+    3  git switch project-1-newsletter-signup 
+    4  cd project-1-newsletter-signup
+    5  cd newsletter-sign-up-with-success-message-main/
+    6  cd ..
+    7  cd project-1-newsletter-sign-up-with-success-message-main/
+    8  npx create-react-app project-1-frontend-mentor
+    9  npm start
+   10  cd project-1-frontend-mentor/
+   11  npm start
+   12  npm install bootstrap@v5.3.0
+   13  npm install
+   14  cd ..
+   15  npm install
+   16  cd project-1-frontend-mentor/
+   17  npm run test
+   18  cd node_modules/
+   19  cd bootstrap/
+   20  npm run docs-serve
+   21  cd..
+   22  cd ..
+   23  cd ..
+   24  cd .
+   25  cd..
+   26  cd ..
+   27  cd ..
+   28  git status
+   29  git add project-1-newsletter-sign-up-with-success-message-main/
+   30  git status
+   31  git commit -m "Got most of element, need to implement the form section"
+   32  git push origin project-1-newsletter-signup 
+   33  git switch main
+   34  git pull origin main
+   35  git branch project-1-newsletter-signup-form
+   36  git switch project-1-newsletter-signup-form 
+   37  git status
+   38  git add project-1-newsletter-sign-up-with-success-message-main/project-1-frontend-mentor/src/App.js 
+   39  git add project-1-newsletter-sign-up-with-success-message-main/project-1-frontend-mentor/src/App.css 
+   40  git add project-1-newsletter-sign-up-with-success-message-main/project-1-frontend-mentor/src/Elements/Submit.js 
+   41  git add project-1-newsletter-sign-up-with-success-message-main/project-1-frontend-mentor/src/Elements/Subscribe.js 
+   42  git status
+   43  git commit -m "trying to figure out javascript for submition errors/ successes. Success modal or route to different page?"
+   44  git push origin project-1-newsletter-signup-form 
+   45  git switch main
+   46  git branch practice-lfz-javascript-ajax
+   47  git switch practice-lfz-javascript-ajax 
+   48  git status
+   49  git add practice-lfz/
+   50  git status
+   51  git commit -m "redo of javascript-ajax complete"
+   52  git push origin practice-lfz-javascript-ajax 
+   53  git switch main
+   54  git pull origin main
+   55  git branch --list 
+   56  git branch practice-lfz-es6-let-const
+   57  git switch practice-lfz-es6-let-const 
+   58  git status
+   59  git add practice-lfz/es6-const-let/
+   60  git status
+   61  git commit -m "es6 const let complete-- one hoisting example"
+   62  git push origin practice-lfz-es6-let-const 
+   63  git switch main
+   64  git pull origin main
+   65  git branch practice-lfz-es6-template-literals
+   66  git switch practice-lfz-es6-template-literals 
+   67  git status
+   68  git add practice-lfz/es6-template-literals/
+   69  git status
+   70  git commit -m "REDO complete of es6 template literals"
+   71  git push origin practice-lfz-es6-template-literals 
+   72  git switch main
+   73  git pull origin main
+   74  git branch practice-lfz-es6-destructuring
+   75  git switch practice-lfz-es6-destructuring 
+   76  git status
+   77  git add practice-lfz/es6-destructuring/
+   78  git commit -m "REDO array/ object destructuring"
+   79  git push origin practice-lfz-es6-destructuring 
+   80  git switch main
+   81  git pull origin main
+   82  git branch practice-lfz-es6-arrow-functions
+   83  git switch practice-lfz-es6-arrow-functions 
+   84  git status
+   85  git add practice-lfz/es6-arrow-functions/
+   86  git status
+   87  git commit -m "REDO arrow function exercise"
+   88  git push origin practice-lfz-es6-arrow-functions 
+   89  git switch main
+   90  git pull origin main
+   91  git branch practice-lfz-command-line-basics
+   92  git switch practice-lfz-command-line-basics 
+   93  cd practice-lfz/
+   94  cd command-line-basics/
+   95  man man
+   96  man cat
+   97  cat laziness.txt 
+   98  cat impatience.txt 
+   99  cat hubris.txt 
+  100  man cat
+  101  cat laziness.txt impatience.txt hubris.txt 
+  102  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  103  cat three-virtues.txt 
+  104  man ls
+  105  man ls
+  106  ls
+  107  ls -a
+  108  ls -F
+  109  ls lfz-staff/
+  110  ls -aF lfz-staff/
+  111  ls -aF lfz-staff > lfz-staff/contents.txt
+  112  cat lfz-staff/contents.txt 
+  113  man pwd
+  114  pwd
+  115  pwd > i-was-here.txt
+  116  cat i-was-here.txt 
+  117  man echo
+  118  echo 'Hello World!'
+  119  echo 'Hello World!' > hello.txt
+  120  cat hello.txt 
+  121  man touch
+  122  touch tag-youre-it.txt
+  123  cat tag-youre-it.txt 
+  124  touch snoot/boop.txt
+  125  ls snoot/
+  126  man mkdir
+  127  mkdir parent
+  128  ls
+  129  man mkdir
+  130  mkdir -p parent/child/grandchild
+  131  ls parent/
+  132  ls parent/child/
+  133  ls -a parent/
+  134  ls -a parent/child/
+  135  man mv
+  136  ls
+  137  man mv
+  138  mv pokiemans pokemon
+  139  ls
+  140  man rm
+  141  man rm
+  142  rm lol.txt 
+  143  ls
+  144  ls -a
+  145  rm -r kill-me/
+  146  ls
+  147  man cp
+  148  cp and-then.txt no-and-then.txt
+  149  cat and-then.txt no-and-then.txt 
+  150  man history
+  151  history
+  152  history > command-history.txt
