@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 export default function Submit() {
   const [emailText, setEmailText] = useState('');
-  const form = document.querySelector('#email-form');
+  const [emailInput, setEmailInput] = useState('');
+  // const $form = document.querySelector('#email-form');
+  // const $email = document.querySelector('#email')
+  // console.log($email)
 
   function handleSubmit(e) {
     e.preventDefault();
-    var formData = new FormData(form);
-    var inputValue = formData.get('email');
-    console.log(form, inputValue);
-    if (!inputValue.includes('@')) {
+    if (!emailInput.includes('@')) {
       console.log('YES');
       setEmailText('incorrect-email');
     } else {
@@ -17,8 +17,17 @@ export default function Submit() {
     }
   }
 
+  function handleChange(e) {
+    e.preventDefault();
+    console.log(e.target.value);
+    let emailTextInput = e.target.value;
+    setEmailInput(emailTextInput);
+  }
+
+  console.log(emailInput);
+
   return (
-    <form id="email-form" onSubmit={handleSubmit}>
+    <form id="email-form" onSubmit={handleSubmit} onChange={handleChange}>
       <div className="pb-4">
         <label className="pb-1" htmlFor="email">
           Email address
