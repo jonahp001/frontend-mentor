@@ -1,20 +1,44 @@
 import { useState } from 'react';
 
 export default function Submit() {
-  const [emailText, setEmailText] = useState('');
+  const [emailStyle, setEmailStyle] = useState('correct-email');
   const [emailInput, setEmailInput] = useState('');
+  const [error, setError] = useState(false);
   // const $form = document.querySelector('#email-form');
   // const $email = document.querySelector('#email')
   // console.log($email)
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!emailInput.includes('@')) {
-      console.log('YES');
-      setEmailText('incorrect-email');
-    } else {
-      setEmailText('correct-email');
+    const atIndex = emailInput.indexOf('@');
+    const afterAt = emailInput.slice(atIndex + 1);
+    const beforeAt = emailInput.slice(0, atIndex);
+    const domainDot = afterAt.indexOf('.');
+    const domain = afterAt.slice(0, domainDot);
+    const afterDot = afterAt.slice(domainDot + 1);
+
+    for (let i = 0; i < beforeAt.length; i++) {
+      if (
+        !(beforeAt.charCodeAt(i) > 47 && beforeAt.charCodeAt(i) < 58) &&
+        !(beforeAt.charCodeAt(i) > 64 && beforeAt.charCodeAt(i) < 91) &&
+        !(beforeAt.charCodeAt(i) > 96 && beforeAt.charCodeAt(i) < 123)
+      ) {
+        setEmailStyle('incorrect-email');
+        setError(true);
+      }
     }
+    if (
+      !emailInput.includes('@') ||
+      domain.length < 1 ||
+      afterDot.length < 1 ||
+      afterAt.includes('@')
+    ) {
+      setEmailStyle('incorrect-email');
+      setError(true);
+    }
+    // else {
+    //   setEmailStyle('correct-email');
+    // }
   }
 
   function handleChange(e) {
@@ -24,20 +48,28 @@ export default function Submit() {
     setEmailInput(emailTextInput);
   }
 
-  console.log(emailInput);
+  function EmailError() {
+    if (error === true) {
+      return <p className="mb-1 d-inline float-right">Valid email required</p>;
+    }
+  }
 
   return (
-    <form id="email-form" onSubmit={handleSubmit} onChange={handleChange}>
+    <form id="email-form" onSubmit={handleSubmit}>
       <div className="pb-4">
-        <label className="pb-1" htmlFor="email">
-          Email address
-        </label>
+        <div className="email-label-line w-100 d-flex justify-content-between">
+          <label className="pb-1" htmlFor="email">
+            Email address
+          </label>
+          <EmailError />
+        </div>
         <input
           id="email"
           name="email"
-          className={`d-block ${emailText}`}
+          className={`d-block ${emailStyle}`}
           type="text"
-          placeholder="email@company.com"></input>
+          placeholder="email@company.com"
+          onChange={handleChange}></input>
       </div>
       <input
         id="submit"
