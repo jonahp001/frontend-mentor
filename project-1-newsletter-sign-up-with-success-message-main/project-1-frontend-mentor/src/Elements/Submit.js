@@ -17,25 +17,40 @@ export default function Submit() {
     const domain = afterAt.slice(0, domainDot);
     const afterDot = afterAt.slice(domainDot + 1);
 
+    console.log(emailInput, beforeAt);
+
+    setError(false);
+    setEmailStyle('correct-email');
+
     for (let i = 0; i < beforeAt.length; i++) {
       if (
         !(beforeAt.charCodeAt(i) > 47 && beforeAt.charCodeAt(i) < 58) &&
         !(beforeAt.charCodeAt(i) > 64 && beforeAt.charCodeAt(i) < 91) &&
         !(beforeAt.charCodeAt(i) > 96 && beforeAt.charCodeAt(i) < 123)
       ) {
-        setEmailStyle('incorrect-email');
         setError(true);
+        setEmailStyle('incorrect-email');
+        console.log('bad bad', error);
+        break;
       }
     }
+
     if (
       !emailInput.includes('@') ||
       domain.length < 1 ||
       afterDot.length < 1 ||
       afterAt.includes('@')
     ) {
-      setEmailStyle('incorrect-email');
       setError(true);
     }
+
+    // if (error === true) {
+    //   setEmailStyle('incorrect-email');
+    //   console.log(emailStyle, error)
+    // } else {
+    //   setEmailStyle('correct-email');
+    //   console.log(emailStyle, error)
+    // }
     // else {
     //   setEmailStyle('correct-email');
     // }
