@@ -15,7 +15,7 @@
 }
 
 .subscribe-window {
-  background-color: #f1edf6;
+  background-color: white;
   width: 800px;
   height: 550px;
   display: flex;
@@ -33,7 +33,7 @@
 }
 
 .subscribe h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-family: Roboto-Bold, sans-serif;
 }
 

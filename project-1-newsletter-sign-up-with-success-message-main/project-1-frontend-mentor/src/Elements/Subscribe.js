@@ -2,9 +2,9 @@ import Submit from './Submit';
 
 export default function Subscribe() {
   return (
-    <div className="subscribe col">
+    <div className="order-2 order-sm-1 subscribe col-12 col-sm-6">
       <header>
-        <h1>Stay Updated!</h1>
+        <h1 className="mb-3">Stay Updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
       </header>
       <div id="checkmarks" className="mb-4">

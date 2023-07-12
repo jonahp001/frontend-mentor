@@ -4,9 +4,6 @@ export default function Submit() {
   const [emailStyle, setEmailStyle] = useState('correct-email');
   const [emailInput, setEmailInput] = useState('');
   const [error, setError] = useState(false);
-  // const $form = document.querySelector('#email-form');
-  // const $email = document.querySelector('#email')
-  // console.log($email)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,17 +40,6 @@ export default function Submit() {
     ) {
       setError(true);
     }
-
-    // if (error === true) {
-    //   setEmailStyle('incorrect-email');
-    //   console.log(emailStyle, error)
-    // } else {
-    //   setEmailStyle('correct-email');
-    //   console.log(emailStyle, error)
-    // }
-    // else {
-    //   setEmailStyle('correct-email');
-    // }
   }
 
   function handleChange(e) {
