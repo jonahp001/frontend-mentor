@@ -1,20 +1,19 @@
 import { useState } from 'react';
 
-export default function Submit() {
+export default function Submit({ emailAddress }) {
   const [emailStyle, setEmailStyle] = useState('correct-email');
   const [emailInput, setEmailInput] = useState('');
   const [error, setError] = useState(false);
 
+  console.log(emailAddress, emailAddress(emailInput), emailInput);
+
   function handleSubmit(e) {
-    e.preventDefault();
     const atIndex = emailInput.indexOf('@');
     const afterAt = emailInput.slice(atIndex + 1);
     const beforeAt = emailInput.slice(0, atIndex);
     const domainDot = afterAt.indexOf('.');
     const domain = afterAt.slice(0, domainDot);
     const afterDot = afterAt.slice(domainDot + 1);
-
-    console.log(emailInput, beforeAt);
 
     setError(false);
     setEmailStyle('correct-email');
@@ -25,9 +24,9 @@ export default function Submit() {
         !(beforeAt.charCodeAt(i) > 64 && beforeAt.charCodeAt(i) < 91) &&
         !(beforeAt.charCodeAt(i) > 96 && beforeAt.charCodeAt(i) < 123)
       ) {
+        e.preventDefault();
         setError(true);
         setEmailStyle('incorrect-email');
-        console.log('bad bad', error);
         break;
       }
     }
@@ -38,13 +37,22 @@ export default function Submit() {
       afterDot.length < 1 ||
       afterAt.includes('@')
     ) {
+      e.preventDefault();
       setError(true);
     }
   }
 
+  function callBack() {
+    return emailAddress(emailInput);
+  }
+
+  function submitAndRetain(e) {
+    callBack();
+    handleSubmit(e);
+  }
+
   function handleChange(e) {
     e.preventDefault();
-    console.log(e.target.value);
     let emailTextInput = e.target.value;
     setEmailInput(emailTextInput);
   }
@@ -56,7 +64,7 @@ export default function Submit() {
   }
 
   return (
-    <form id="email-form" onSubmit={handleSubmit}>
+    <form id="email-form" onSubmit={submitAndRetain}>
       <div className="pb-4">
         <div className="email-label-line w-100 d-flex justify-content-between">
           <label className="pb-1" htmlFor="email">

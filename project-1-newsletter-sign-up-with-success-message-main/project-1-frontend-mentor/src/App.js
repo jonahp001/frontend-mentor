@@ -1,6 +1,7 @@
 import './App.css';
 import desktopImage from './illustration-sign-up-desktop.svg';
 import Subscribe from './Elements/Subscribe';
+import Success from './Elements/Success';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           />
         </div>
       </div>
+      <Success />
     </div>
   );
 }
