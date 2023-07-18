@@ -1,4 +1,4 @@
-export default function Success() {
+export default function Success(props) {
   return (
     <div className="success p-5 d-flex flex-column justify-content-center hidden">
       <div className="text-start">
@@ -15,7 +15,7 @@ export default function Success() {
         </svg>
         <h1>Thanks for subscribing!</h1>
         <p>
-          A confirmation email has been sent to <strong>INSERTPROP</strong>.
+          A confirmation email has been sent to <strong>{props.email}</strong>.
           Please open it and click the button inside to confirm your
           subscription
         </p>

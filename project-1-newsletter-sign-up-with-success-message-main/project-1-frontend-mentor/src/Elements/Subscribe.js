@@ -1,15 +1,10 @@
 import Submit from './Submit';
-import { useState } from 'react';
 
-export default function Subscribe({ test }) {
-  const [emailAddy, setEmailAddy] = useState();
-
+export default function Subscribe({ setCurrentEmailAddress }) {
   function getEmail(email) {
-    console.log(`i hope this works! do you ${email}`);
-    setEmailAddy(email);
+    setCurrentEmailAddress(email);
   }
 
-  console.log(typeof test);
   return (
     <div className="order-2 order-sm-1 subscribe col-12 col-sm-6 my-auto">
       <header>
