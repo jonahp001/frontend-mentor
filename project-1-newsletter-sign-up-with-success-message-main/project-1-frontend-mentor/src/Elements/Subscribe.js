@@ -1,9 +1,18 @@
 import Submit from './Submit';
+import { useState, useEffect } from 'react';
 
 export default function Subscribe({ setCurrentEmailAddress }) {
-  function getEmail(email) {
-    setCurrentEmailAddress(email);
-  }
+  const [successful, setSuccessful] = useState(false);
+  const [emailAd, setEmailAd] = useState();
+
+  // console.log(emailAd)
+
+  useEffect(() => {
+    setCurrentEmailAddress(emailAd);
+    // console.log(setCurrentEmailAddress.textContent)
+  }, [setCurrentEmailAddress, emailAd]);
+
+  console.log(successful);
 
   return (
     <div className="order-2 order-sm-1 subscribe col-12 col-sm-6 my-auto">
@@ -59,7 +68,7 @@ export default function Subscribe({ setCurrentEmailAddress }) {
           <p className="d-inline mb-0">And much more!</p>
         </div>
       </div>
-      <Submit emailAddress={getEmail} />
+      <Submit emailAddress={setEmailAd} setSuccessful={setSuccessful} />
     </div>
   );
 }

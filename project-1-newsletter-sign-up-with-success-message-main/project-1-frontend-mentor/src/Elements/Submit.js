@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 
-export default function Submit({ emailAddress }) {
+export default function Submit({ emailAddress, setSuccessful }) {
   const [emailStyle, setEmailStyle] = useState('correct-email');
   const [emailInput, setEmailInput] = useState('');
   const [error, setError] = useState(false);
@@ -17,6 +18,7 @@ export default function Submit({ emailAddress }) {
 
     setError(false);
     setEmailStyle('correct-email');
+    setSuccessful(true);
 
     for (let i = 0; i < beforeAt.length; i++) {
       if (
@@ -26,6 +28,7 @@ export default function Submit({ emailAddress }) {
       ) {
         e.preventDefault();
         setError(true);
+        setSuccessful(false);
         setEmailStyle('incorrect-email');
         break;
       }
@@ -42,12 +45,16 @@ export default function Submit({ emailAddress }) {
     }
   }
 
-  function callBack() {
-    return emailAddress(emailInput);
-  }
+  // function callBack() {
+  //   return emailAddress(emailInput);
+  // }
+
+  useEffect(() => {
+    emailAddress(emailInput);
+  }, [emailAddress, emailInput]);
 
   function submitAndRetain(e) {
-    callBack();
+    // callBack();
     handleSubmit(e);
   }
 

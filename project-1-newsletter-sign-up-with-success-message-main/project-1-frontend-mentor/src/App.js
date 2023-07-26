@@ -7,11 +7,11 @@ import { useState } from 'react';
 function App() {
   const [currentEmailAddress, setCurrentEmailAddress] = useState();
 
-  console.log(currentEmailAddress);
-
   return (
     <div className="App-bg d-flex justify-content-center align-items-center">
-      <div className="h-100 subscribe-window container-md d-flex flex-row px-0 shadow">
+      <div
+        id="mainDiv"
+        className="h-100 subscribe-window container-md d-flex flex-row px-0 shadow">
         <div className="row">
           <Subscribe setCurrentEmailAddress={setCurrentEmailAddress} />
           {/* note to self, dont put a classname on react component, but put it on the first DIV inside the component if you want to change aspects of it */}

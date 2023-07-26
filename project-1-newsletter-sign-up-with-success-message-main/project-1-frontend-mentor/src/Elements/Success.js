@@ -1,6 +1,8 @@
 export default function Success(props) {
   return (
-    <div className="success p-5 d-flex flex-column justify-content-center hidden">
+    <div
+      id="successDiv"
+      className="success p-5 d-flex flex-column justify-content-center hidden">
       <div className="text-start">
         <svg
           className="mb-4"
