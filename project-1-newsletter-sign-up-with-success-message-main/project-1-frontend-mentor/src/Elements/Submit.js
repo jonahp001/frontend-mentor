@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Submit({ emailAddress, setSuccessful }) {
   const [emailStyle, setEmailStyle] = useState('correct-email');
   const [emailInput, setEmailInput] = useState('');
   const [error, setError] = useState(false);
 
-  console.log(emailAddress, emailAddress(emailInput), emailInput);
+  // console.log(emailAddress, emailAddress(emailInput), emailInput);
 
   function handleSubmit(e) {
+    e.preventDefault();
     const atIndex = emailInput.indexOf('@');
     const afterAt = emailInput.slice(atIndex + 1);
     const beforeAt = emailInput.slice(0, atIndex);
@@ -38,9 +38,11 @@ export default function Submit({ emailAddress, setSuccessful }) {
       !emailInput.includes('@') ||
       domain.length < 1 ||
       afterDot.length < 1 ||
-      afterAt.includes('@')
+      afterAt.includes('@' || emailInput.length < 1)
     ) {
       e.preventDefault();
+      setEmailStyle('incorrect-email');
+      setSuccessful(false);
       setError(true);
     }
   }
@@ -53,10 +55,10 @@ export default function Submit({ emailAddress, setSuccessful }) {
     emailAddress(emailInput);
   }, [emailAddress, emailInput]);
 
-  function submitAndRetain(e) {
-    // callBack();
-    handleSubmit(e);
-  }
+  // function submitAndRetain(e) {
+  //   callBack();
+  //   handleSubmit(e);
+  // }
 
   function handleChange(e) {
     e.preventDefault();
@@ -71,7 +73,7 @@ export default function Submit({ emailAddress, setSuccessful }) {
   }
 
   return (
-    <form id="email-form" onSubmit={submitAndRetain}>
+    <form id="email-form" onSubmit={handleSubmit}>
       <div className="pb-4">
         <div className="email-label-line w-100 d-flex justify-content-between">
           <label className="pb-1" htmlFor="email">

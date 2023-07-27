@@ -1,7 +1,10 @@
 import Submit from './Submit';
 import { useState, useEffect } from 'react';
 
-export default function Subscribe({ setCurrentEmailAddress }) {
+export default function Subscribe({
+  setCurrentEmailAddress,
+  setCurrentSuccessState,
+}) {
   const [successful, setSuccessful] = useState(false);
   const [emailAd, setEmailAd] = useState();
 
@@ -9,8 +12,9 @@ export default function Subscribe({ setCurrentEmailAddress }) {
 
   useEffect(() => {
     setCurrentEmailAddress(emailAd);
+    setCurrentSuccessState(successful);
     // console.log(setCurrentEmailAddress.textContent)
-  }, [setCurrentEmailAddress, emailAd]);
+  }, [setCurrentEmailAddress, setCurrentSuccessState, emailAd, successful]);
 
   console.log(successful);
 

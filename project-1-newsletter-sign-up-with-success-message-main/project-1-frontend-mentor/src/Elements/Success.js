@@ -1,8 +1,9 @@
-export default function Success(props) {
+export default function Success({ email, success }) {
+  console.log(email, success);
   return (
     <div
       id="successDiv"
-      className="success p-5 d-flex flex-column justify-content-center hidden">
+      className="success p-5 d-flex flex-column justify-content-center">
       <div className="text-start">
         <svg
           className="mb-4"
@@ -17,9 +18,8 @@ export default function Success(props) {
         </svg>
         <h1>Thanks for subscribing!</h1>
         <p>
-          A confirmation email has been sent to <strong>{props.email}</strong>.
-          Please open it and click the button inside to confirm your
-          subscription
+          A confirmation email has been sent to <strong>{email}</strong>. Please
+          open it and click the button inside to confirm your subscription
         </p>
       </div>
       <div>
