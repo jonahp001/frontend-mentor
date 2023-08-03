@@ -9,8 +9,6 @@ function App() {
   const [currentSuccessState, setCurrentSuccessState] = useState();
   const [divClassHidden, setDivClassHidden] = useState('');
 
-  console.log(currentSuccessState, divClassHidden);
-
   useEffect(() => {
     if (currentSuccessState === true) {
       setDivClassHidden('hidden');
