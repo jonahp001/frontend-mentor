@@ -5,8 +5,6 @@ export default function Submit({ emailAddress, setSuccessful }) {
   const [emailInput, setEmailInput] = useState('');
   const [error, setError] = useState(false);
 
-  // console.log(emailAddress, emailAddress(emailInput), emailInput);
-
   function handleSubmit(e) {
     e.preventDefault();
     const atIndex = emailInput.indexOf('@');
@@ -47,18 +45,9 @@ export default function Submit({ emailAddress, setSuccessful }) {
     }
   }
 
-  // function callBack() {
-  //   return emailAddress(emailInput);
-  // }
-
   useEffect(() => {
     emailAddress(emailInput);
-  }, [emailAddress, emailInput]);
-
-  // function submitAndRetain(e) {
-  //   callBack();
-  //   handleSubmit(e);
-  // }
+  }, [emailAddress, emailInput, setSuccessful]);
 
   function handleChange(e) {
     e.preventDefault();

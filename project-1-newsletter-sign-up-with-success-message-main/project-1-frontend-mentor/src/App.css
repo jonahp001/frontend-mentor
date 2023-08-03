@@ -128,7 +128,8 @@ input::placeholder {
   cursor: pointer;
 }
 
-#submit:active {
+#submit:active,
+#success-div button:active {
   background-color: #ff6a3b;
   box-shadow: 0 15px 25px #ffb7af;
 }
@@ -141,8 +142,7 @@ input::placeholder {
   }
 
   .text-start {
-    max-width: 304px;
-    margin: 0 auto 15rem;
+    margin: 0 0 20rem;
   }
 
   .success {
@@ -150,7 +150,7 @@ input::placeholder {
   }
 
   .success button {
-    max-width: 304px;
+    max-width: 100%;
   }
 
   .success svg {

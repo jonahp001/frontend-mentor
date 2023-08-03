@@ -8,15 +8,11 @@ export default function Subscribe({
   const [successful, setSuccessful] = useState(false);
   const [emailAd, setEmailAd] = useState();
 
-  // console.log(emailAd)
-
   useEffect(() => {
     setCurrentEmailAddress(emailAd);
     setCurrentSuccessState(successful);
-    // console.log(setCurrentEmailAddress.textContent)
+    setSuccessful(false);
   }, [setCurrentEmailAddress, setCurrentSuccessState, emailAd, successful]);
-
-  console.log(successful);
 
   return (
     <div className="order-2 order-sm-1 subscribe col-12 col-sm-6 my-auto">

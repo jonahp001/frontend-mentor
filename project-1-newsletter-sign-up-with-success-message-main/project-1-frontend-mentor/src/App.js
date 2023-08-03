@@ -2,18 +2,26 @@ import './App.css';
 import desktopImage from './illustration-sign-up-desktop.svg';
 import Subscribe from './Elements/Subscribe';
 import Success from './Elements/Success';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [currentEmailAddress, setCurrentEmailAddress] = useState();
   const [currentSuccessState, setCurrentSuccessState] = useState();
+  const [divClassHidden, setDivClassHidden] = useState('');
 
-  console.log(currentEmailAddress, currentSuccessState);
+  console.log(currentSuccessState, divClassHidden);
+
+  useEffect(() => {
+    if (currentSuccessState === true) {
+      setDivClassHidden('hidden');
+    }
+  }, [currentSuccessState]);
+
   return (
     <div className="App-bg d-flex justify-content-center align-items-center">
       <div
         id="mainDiv"
-        className="h-100 subscribe-window container-md d-flex flex-row px-0 shadow hidden">
+        className={`h-100 subscribe-window container-md d-flex flex-row px-0 shadow ${divClassHidden}`}>
         <div className="row">
           <Subscribe
             setCurrentEmailAddress={setCurrentEmailAddress}
@@ -27,7 +35,11 @@ function App() {
           />
         </div>
       </div>
-      <Success email={currentEmailAddress} success={currentSuccessState} />
+      <Success
+        email={currentEmailAddress}
+        success={currentSuccessState}
+        setDivClassHidden={setDivClassHidden}
+      />
     </div>
   );
 }
