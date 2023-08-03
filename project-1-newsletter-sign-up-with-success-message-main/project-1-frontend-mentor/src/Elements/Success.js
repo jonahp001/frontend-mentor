@@ -2,14 +2,14 @@ export default function Success({ email, success }) {
   console.log(email, success);
   return (
     <div
-      id="successDiv"
+      id="success-div"
       className="success p-5 d-flex flex-column justify-content-center">
       <div className="text-start">
         <svg
           className="mb-4"
           xmlns="http://www.w3.org/2000/svg"
-          width="45"
-          height="45"
+          // width="100%"
+          // height="auto"
           viewBox="0 0 21 21">
           <g fill="none">
             <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />

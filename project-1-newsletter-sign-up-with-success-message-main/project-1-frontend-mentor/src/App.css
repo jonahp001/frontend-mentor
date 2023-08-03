@@ -107,6 +107,11 @@ input::placeholder {
   padding-left: 1rem;
 }
 
+.success svg {
+  width: 3rem;
+  height: 3rem;
+}
+
 #submit,
 .success button {
   width: 100%;
@@ -126,4 +131,31 @@ input::placeholder {
 #submit:active {
   background-color: #ff6a3b;
   box-shadow: 0 15px 25px #ffb7af;
+}
+
+@media (width <= 576px) {
+  #success-div {
+    height: 100vh;
+    width: 100vw;
+    justify-content: end !important;
+  }
+
+  .text-start {
+    max-width: 304px;
+    margin: 0 auto 15rem;
+  }
+
+  .success {
+    border-radius: 0;
+  }
+
+  .success button {
+    max-width: 304px;
+  }
+
+  .success svg {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 2rem !important;
+  }
 }

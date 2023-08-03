@@ -13,7 +13,7 @@ function App() {
     <div className="App-bg d-flex justify-content-center align-items-center">
       <div
         id="mainDiv"
-        className="h-100 subscribe-window container-md d-flex flex-row px-0 shadow">
+        className="h-100 subscribe-window container-md d-flex flex-row px-0 shadow hidden">
         <div className="row">
           <Subscribe
             setCurrentEmailAddress={setCurrentEmailAddress}
