@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Code exercise solutions.",
+  "type": "module",
   "scripts": {
     "prepare": "husky install"
   },
