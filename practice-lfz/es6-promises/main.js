@@ -7,5 +7,5 @@ promise1
     console.log(name);
   })
   .catch((error) => {
-    console.error(error);
+    console.error(error.message);
   });
