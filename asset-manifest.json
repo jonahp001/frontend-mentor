@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/frontend-mentor-project-1/static/css/main.ccd4f1d0.css",
+    "main.js": "/frontend-mentor-project-1/static/js/main.1b9ed51c.js",
+    "static/js/787.7c30f917.chunk.js": "/frontend-mentor-project-1/static/js/787.7c30f917.chunk.js",
+    "static/media/Roboto-Regular.ttf": "/frontend-mentor-project-1/static/media/Roboto-Regular.160d7a6ac26376e5e977.ttf",
+    "static/media/Roboto-Bold.ttf": "/frontend-mentor-project-1/static/media/Roboto-Bold.35eab922fdbe4b5324d4.ttf",
+    "static/media/illustration-sign-up-desktop.svg": "/frontend-mentor-project-1/static/media/illustration-sign-up-desktop.ce2024babf0bc98a8862252535b544c9.svg",
+    "index.html": "/frontend-mentor-project-1/index.html",
+    "main.ccd4f1d0.css.map": "/frontend-mentor-project-1/static/css/main.ccd4f1d0.css.map",
+    "main.1b9ed51c.js.map": "/frontend-mentor-project-1/static/js/main.1b9ed51c.js.map",
+    "787.7c30f917.chunk.js.map": "/frontend-mentor-project-1/static/js/787.7c30f917.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccd4f1d0.css",
+    "static/js/main.1b9ed51c.js"
+  ]
+}
