@@ -1,0 +1,109 @@
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../../assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-BoldItalic;
+  src: url('../../assets/fonts/Poppins-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: Poppins-ExtraBold;
+  src: url('../../assets/fonts/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: Poppins-ExtraBoldItalic;
+  src: url('../../assets/fonts/Poppins-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Italic;
+  src: url('../../assets/fonts/Poppins-Italic.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../../assets/fonts/Poppins-Regular.ttf');
+}
+
+.App {
+  text-align: center;
+  background-color: rgb(235, 235, 235);
+  min-height: 100vh;
+}
+
+.window {
+  background-color: white;
+  width: 800px;
+  max-height: 550px;
+  border-radius: 20px 20px 150px;
+}
+
+.date-space {
+  color: rgb(141, 141, 141);
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  width: 10rem;
+  font-family: Poppins-Bold, sans-serif;
+}
+
+.date-input input {
+  letter-spacing: normal;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: 2px solid rgb(224, 224, 224);
+  padding-left: 1rem;
+}
+
+.invalid-date {
+  border: 2px solid rgb(216, 73, 68);
+}
+
+.date-input input::placeholder {
+  color: rgb(141, 141, 141);
+}
+
+.date-input input:focus {
+  outline-color: rgb(139, 80, 235);
+}
+
+#submit-button {
+  border-style: none;
+  padding: 0;
+  border-radius: 50%;
+  outline: none;
+}
+
+#submit-button svg {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  padding: 1.25rem;
+  background-color: rgb(139, 80, 235);
+}
+
+#submit-button svg:active {
+  background-color: black;
+  transition: 0.25s ease-in-out;
+}
+
+.submit-line {
+  border-top: 2px solid rgb(224, 224, 224);
+  width: 100%;
+}
+
+.age-output {
+  font-family: Poppins-ExtraBoldItalic, sans-serif;
+}
+
+.age-output h2 {
+  font-size: 5rem;
+}
+
+.output-date {
+  letter-spacing: 0.75rem;
+  color: rgb(139, 80, 235);
+}
