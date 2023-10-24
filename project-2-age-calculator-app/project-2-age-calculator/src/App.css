@@ -37,7 +37,6 @@
 .window {
   background-color: white;
   width: 800px;
-  max-height: 550px;
   border-radius: 20px 20px 150px;
 }
 
@@ -58,8 +57,23 @@
   padding-left: 1rem;
 }
 
-.invalid-date {
+/* .invalid-date {
   border: 2px solid rgb(216, 73, 68);
+} */
+
+.incorrect-date,
+.incorrect-date label {
+  color: rgb(216, 73, 68);
+}
+
+.incorrect-date input {
+  border: 2px solid rgb(216, 73, 68);
+}
+
+.date-space p {
+  letter-spacing: normal;
+  font-size: 0.75rem;
+  font-family: Poppins-Regular, sans-serif;
 }
 
 .date-input input::placeholder {
