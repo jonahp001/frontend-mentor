@@ -1,28 +1,17 @@
 import { useState } from 'react';
-// import { useEffect } from 'react';
-
-// const months = [
-//   'Jan',
-//   'Feb',
-//   'Mar',
-//   'May',
-//   'Jun',
-//   'Jul',
-//   'Aug',
-//   'Sep',
-//   'Oct',
-//   'Nov',
-//   'Dec',
-// ];
 
 const currentDate = new Date();
-
 const currentYear = currentDate.getFullYear();
 
-export default function Ageform() {
-  const [dayInput, setDayInput] = useState('');
-  const [monthInput, setMonthInput] = useState('');
-  const [yearInput, setYearInput] = useState('');
+export default function Ageform({
+  setDayInput,
+  setMonthInput,
+  setYearInput,
+  setIsValidDate,
+}) {
+  // const [dayInput, setDayInput] = useState('');
+  // const [monthInput, setMonthInput] = useState('');
+  // const [yearInput, setYearInput] = useState('');
   const [dateStyle, setDateStyle] = useState('correct-date');
   const [yearStyle, setYearStyle] = useState('correct-date');
   const [monthStyle, setMonthStyle] = useState('correct-date');
@@ -43,6 +32,7 @@ export default function Ageform() {
     setInvalidYear(false);
     setInvalidMonth(false);
     setInvalidDay(false);
+    setIsValidDate(true);
     setDateStyle('correct-date');
     setYearStyle('correct-date');
     setMonthStyle('correct-date');
@@ -51,11 +41,13 @@ export default function Ageform() {
     if (year > currentYear) {
       setYearStyle('incorrect-date');
       setInvalidYear(true);
+      setIsValidDate(false);
     }
 
     if (month > 11 || month < 0 || month.length > 2) {
       setMonthStyle('incorrect-date');
       setInvalidMonth(true);
+      setIsValidDate(false);
     }
 
     if (
@@ -68,71 +60,36 @@ export default function Ageform() {
     ) {
       setDayStyle('incorrect-date');
       setInvalidDay(true);
+      setIsValidDate(false);
     }
-
-    if (
-      (invalidDay === true &&
-        invalidMonth === false &&
-        invalidYear === false) ||
-      (invalidDay === false &&
-        invalidMonth === false &&
-        invalidYear === true) ||
-      (invalidDay === false && invalidMonth === true && invalidYear === false)
-    ) {
-      console.log(invalidDate);
-      console.log(invalidDay);
-      console.log(invalidMonth);
-      console.log(invalidYear);
-      setDateStyle('incorrect-date');
-      setInvalidDate(true);
-      setDayStyle('correct-date');
-      setInvalidDay(false);
-      setMonthStyle('correct-date');
-      setInvalidMonth(false);
-      setYearStyle('correct-date');
-      setInvalidYear(false);
-    }
-
-    // if (
-    //   (((!day > 31 ||
-    //   !day < 1) &&
-    //   (!month > 11 ||
-    //   !month < 0 ||
-    //   !((month === 1 && day > 28 && day < 30) && year % 4 > 1) ||
-    //   !((month === 0 ||
-    //     month === 2 ||
-    //     month === 4 ||
-    //     month === 6 ||
-    //     month === 7 ||
-    //     month === 9 ||
-    //     month === 11) &&
-    //     day > 31) ||
-    //   !((month === 3 || month === 5 || month === 8 || month === 10) &&
-    //     day > 30))) &&
-    //     (year.length > 4 ||
-    //     year < 0 ||
-    //     (year % 4 > 0 && month === 1 && day > 29) ||
-    //     year > currentYear)
-    //     )) {
-    //   console.log('hi there!')
-    //   setDateStyle('incorrect-date');
-    //   setInvalidYear(true)
-    // }
 
     setDayInput(e.target[0].value);
     setMonthInput(e.target[1].value);
     setYearInput(e.target[2].value);
   }
 
-  // useEffect(() => {
-  //   setInvalidDate(false);
-  //   setInvalidDay(false)
-  //   setInvalidMonth(false)
-  //   setInvalidYear(false)
-  // }, [invalidDate, invalidDay, invalidMonth, invalidYear])
+  if (
+    (invalidDay === true && invalidMonth === false && invalidYear === false) ||
+    (invalidDay === false && invalidMonth === false && invalidYear === true) ||
+    (invalidDay === false && invalidMonth === true && invalidYear === false)
+  ) {
+    console.log(invalidDate);
+    console.log(invalidDay);
+    console.log(invalidMonth);
+    console.log(invalidYear);
+    setDateStyle('incorrect-date');
+    setInvalidDate(true);
+    setDayStyle('correct-date');
+    setInvalidDay(false);
+    setMonthStyle('correct-date');
+    setInvalidMonth(false);
+    setYearStyle('correct-date');
+    setInvalidYear(false);
+    setIsValidDate(false);
+  }
 
-  console.log(dayInput, monthInput, yearInput);
-  console.log(new Date(yearInput, monthInput - 1, dayInput));
+  // console.log(dayInput, monthInput, yearInput);
+  // console.log(new Date(yearInput, monthInput - 1, dayInput));
 
   function DateInputError() {
     if (invalidDate === true) {
