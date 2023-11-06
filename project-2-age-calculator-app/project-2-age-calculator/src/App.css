@@ -38,28 +38,24 @@
   background-color: white;
   width: 800px;
   border-radius: 20px 20px 150px;
+  padding: 3rem;
 }
 
 .date-space {
   color: rgb(141, 141, 141);
   font-size: 0.75rem;
   letter-spacing: 0.15rem;
-  width: 10rem;
   font-family: Poppins-Bold, sans-serif;
 }
 
 .date-input input {
   letter-spacing: normal;
-  height: 4rem;
+  height: 5rem;
   font-size: 2rem;
   border-radius: 10px;
   border: 2px solid rgb(224, 224, 224);
   padding-left: 1rem;
 }
-
-/* .invalid-date {
-  border: 2px solid rgb(216, 73, 68);
-} */
 
 .incorrect-date,
 .incorrect-date label {
@@ -68,6 +64,10 @@
 
 .incorrect-date input {
   border: 2px solid rgb(216, 73, 68);
+}
+
+.incorrect-input {
+  font-size: 0.9rem;
 }
 
 .date-space p {
@@ -120,4 +120,44 @@
 .output-date {
   letter-spacing: 0.75rem;
   color: rgb(139, 80, 235);
+}
+
+.output-date-normal {
+  color: rgb(139, 80, 235);
+}
+
+@media (width <= 575px) {
+  .window {
+    padding: 3rem 1.25rem;
+  }
+
+  .age-output h2 {
+    font-size: 3rem;
+  }
+
+  #submit-button svg {
+    width: 4rem;
+    height: 4rem;
+    padding: 1.2rem;
+  }
+
+  .date-input input {
+    letter-spacing: normal;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    border-radius: 7px;
+    padding-left: 0.75rem;
+  }
+
+  .output-date {
+    letter-spacing: 0.25rem;
+    color: rgb(139, 80, 235);
+  }
+}
+
+@media (width <=390px) {
+  .App {
+    align-items: flex-start !important;
+    padding-top: 5rem;
+  }
 }
