@@ -9,9 +9,6 @@ export default function Ageform({
   setYearInput,
   setIsValidDate,
 }) {
-  // const [dayInput, setDayInput] = useState('');
-  // const [monthInput, setMonthInput] = useState('');
-  // const [yearInput, setYearInput] = useState('');
   const [dateStyle, setDateStyle] = useState('correct-date');
   const [yearStyle, setYearStyle] = useState('correct-date');
   const [monthStyle, setMonthStyle] = useState('correct-date');
@@ -73,10 +70,6 @@ export default function Ageform({
     (invalidDay === false && invalidMonth === false && invalidYear === true) ||
     (invalidDay === false && invalidMonth === true && invalidYear === false)
   ) {
-    console.log(invalidDate);
-    console.log(invalidDay);
-    console.log(invalidMonth);
-    console.log(invalidYear);
     setDateStyle('incorrect-date');
     setInvalidDate(true);
     setDayStyle('correct-date');
@@ -88,13 +81,11 @@ export default function Ageform({
     setIsValidDate(false);
   }
 
-  // console.log(dayInput, monthInput, yearInput);
-  // console.log(new Date(yearInput, monthInput - 1, dayInput));
-
   function DateInputError() {
     if (invalidDate === true) {
       return (
-        <p className={`font-italic text-left mb-0 mt-2 ${dateStyle}`}>
+        <p
+          className={`font-italic text-left mb-0 mt-2 incorrect-input ${dateStyle}`}>
           Must be a valid date
         </p>
       );
@@ -131,16 +122,11 @@ export default function Ageform({
     }
   }
 
-  console.log(dateStyle);
-  console.log(dayStyle);
-  console.log(monthStyle);
-  console.log(yearStyle);
-
   return (
     <div className="px-0">
       <form onSubmit={handleSubmit}>
         <div
-          className={`d-flex justify-content-between date-input col-9 px-0 text-left ${dateStyle}`}>
+          className={`d-flex justify-content-between date-input col-sm-9 col-12 px-0 text-left ${dateStyle}`}>
           <div className={`date-space ${dayStyle}`}>
             <label htmlFor="day-input">DAY</label>
             <input
@@ -152,7 +138,7 @@ export default function Ageform({
               required></input>
             <InvalidDayError />
           </div>
-          <div className={`date-space ${monthStyle}`}>
+          <div className={`date-space mx-3 ${monthStyle}`}>
             <label htmlFor="month-input">MONTH</label>
             <input
               className="w-100"
@@ -176,9 +162,10 @@ export default function Ageform({
           </div>
         </div>
         <DateInputError />
-        <div className="d-flex align-items-center">
-          <hr className="submit-line"></hr>
-          <button id="submit-button" className="float-right" type="submit">
+        <div className="d-flex align-items-center my-4 my-sm-0">
+          <hr className="submit-line d-none d-sm-block"></hr>
+          <hr className="submit-line d-sm-none"></hr>
+          <button id="submit-button" type="submit">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="46"
@@ -190,6 +177,7 @@ export default function Ageform({
               <title id="button-label">Submit Button</title>
             </svg>
           </button>
+          <hr className="submit-line d-sm-none"></hr>
         </div>
       </form>
     </div>

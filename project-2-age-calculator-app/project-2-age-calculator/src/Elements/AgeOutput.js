@@ -12,31 +12,35 @@ export default function AgeOutput({
   const yearDifference = dayDifference / 365;
 
   let years = Math.floor(yearDifference);
+  years = `${years} `;
   let months = Math.floor((dayDifference - years * 365) / 30);
+  months = `${months} `;
   let days = Math.floor(dayDifference - years * 365 - months * 30);
-  console.log(years, months, days);
+  days = `${days} `;
+
+  let outputSpace = 'output-date-normal';
 
   if (isValidDate === false) {
-    console.log('nice');
     years = '--';
     months = '--';
     days = '--';
+    outputSpace = 'output-date';
   }
 
   function Years() {
-    return <h2 className="mb-0 d-inline output-date">{years}</h2>;
+    return <h2 className={`mb-0 d-inline ${outputSpace}`}>{years}</h2>;
   }
 
   function Months() {
-    return <h2 className="mb-0 d-inline output-date">{months}</h2>;
+    return <h2 className={`mb-0 d-inline ${outputSpace}`}>{months}</h2>;
   }
 
   function Days() {
-    return <h2 className="mb-0 d-inline output-date">{days}</h2>;
+    return <h2 className={`mb-0 d-inline ${outputSpace}`}>{days}</h2>;
   }
 
   return (
-    <div className="age-output text-left overflow-hidden">
+    <div className="age-output text-left">
       <div>
         <Years />
         <h2 className="mb-0 d-inline">years</h2>
